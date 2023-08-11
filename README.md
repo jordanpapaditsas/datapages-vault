@@ -4,7 +4,12 @@
 Coming soon. ( Under Development )
 
 
+## Planning
 
+- Add a simple UI
+- Organize directories
+- Implement Frontend logic with vanilla JavaScript
+- Create a management system with a Database for books
 
 
 ## Getting Started
