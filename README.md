@@ -10,7 +10,7 @@ Coming soon. ( Under Development )
 - Organize directories
 - Implement Frontend logic with vanilla JavaScript
 - Create a management system with a Database for books
-
+- JSON Requests & Responses
 
 ## Getting Started
 
