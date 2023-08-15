@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,500;1,200&family=Roboto:ital,wght@0,400;0,500;0,900;1,300;1,400;1,500&display=swap');
+
+:root {
+  --text-color: white;
+  --theme-color: #4f3532;
+  --font-size-small: 1rem;
+  --font-size-medium: 1.5rem;
+  --font-size-large: 2rem; 
+  --font-weight-medium: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr auto;
+  grid-template-areas: 
+  "aside header header"
+  "aside main main"
+  "footer footer footer";
+}
+
+.app-name {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-large);
+}
+
+.aside-container {
+  grid-area: aside;
+  grid-column: 1;
+}
+
+.header-container {
+  grid-area: header;
+  grid-column: 2;
+}
+
+footer {
+  grid-area: footer;
+  grid-row: 3;
+  text-align: center;   
+  padding: 1rem;
+  background-color: var(--theme-color);
+  color: var(--text-color);
+}
