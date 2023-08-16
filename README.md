@@ -9,7 +9,7 @@ Coming soon. ( Under Development )
 - Add a simple UI using HTML and CSS
 - Organize directories
 - Implement Frontend logic with vanilla JavaScript
-- Create a management system with a Database for books
+- Create a local storage for saving information about the books
 - JSON Requests & Responses
 
 ## Getting Started
