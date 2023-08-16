@@ -5,24 +5,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WebMinds Hub</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header>
-      <div class="header-container">
-        <p>Title</p>
-        <p>Author</p>
-        <p>Pages</p>
-        <p>Read</p>
-      </div>
+      <nav>
+        <ul class="navbar">
+          <li><a href="#"><i class="fa-solid fa-book"></i> E-Books</a></li>
+          <li><a href="#"><i class="fa-solid fa-circle-info"></i> About</a></li>
+          <li><a href="#"><i class="fa-solid fa-phone"></i> Contact Us</a></li>
+          <li><a href="#"><i class="fa-solid fa-user"></i> Log in</a></li>
+        </ul>
+      </nav>
     </header>
 
     <aside>
       <div class="aside-container">
+        <img class="wbm-logo" src="assets/webminds-hub.png" alt="WBMH">
         <p class="app-name">WebMinds Hub</p>
       </div>
+
+      <form>
+        <div class="title-input">
+          <label for="title-book">Please input the title of the book: </label>
+          <input type="text" name="book-title" id="book-title" autocomplete="off" required>
+        </div>
+        <div class="author-input">
+          <label for="author-name">Please input the name of the author: </label>
+          <input type="text" name="author-name" id="author-name" autocomplete="off" required>
+        </div>
+        <div class="pages-input">
+          <label for="pages-number">Please input the total pages of the book:</label>
+          <input type="text" name="pages-number" id="pages-number" minlength="1" autocomplete="off" pattern="[0-9]*" required>
+        </div>
+        <div class="read-checkbox">
+          <input type="checkbox" name="read-status" id="read-check">
+          <label for="read-status">Have you read already this book?</label>
+        </div>
+        <div class="add-btn"> 
+          <input id="add-book" type="submit" value="ADD A NEW BOOK">
+        </div>
+      </form>
     </aside>
 
     <main>
+      <div id="book-information">
+        <table id="lib-table">
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Read</th>
+          </tr>
+          <tbody id="book-body"></tbody>
+        </table>
+      </div>
     </main>
     
     <footer>
@@ -30,7 +67,7 @@
         <script>
           document.write(new Date().getFullYear());
         </script>
-        JP
+        Jordan Papaditsas
       </p>
     </footer>
   <script src="src/index.js"></script>
