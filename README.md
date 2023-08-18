@@ -1,16 +1,34 @@
 # WebMinds-Hub
 
 ## Description
-Coming soon. ( Under Development )
+WebMinds Hub is a web library application that allows you to keep track of your reading list, categorizing books you want to read and marking them as read or unread. The app is built using HTML, CSS, and JavaScript, providing a dynamic table for displaying your book collection. ( Still under Development )
 
+## Live Preview
+**https://jordanpapaditsas.github.io/webminds-hub/**
 
-## Planning
-
-- Add a simple UI using HTML and CSS
-- Organize directories
-- Implement Frontend logic with vanilla JavaScript
-- Create a local storage for saving information about the books
-- JSON Requests & Responses
+## Features
+<ul>
+<li><strong>Dynamic Book List Table:</strong> Each row represents a book and includes the following information:
+  <ul>
+    <li><strong>Title:</strong> The title of the book.</li>
+    <li><strong>Author:</strong> The author of the book.</li>
+    <li><strong>Pages:</strong> The total number of pages in the book.</li>
+    <li><strong>Read Status:</strong> A checkbox indicating whether the book has been read or not.</li>
+  </ul>
+</li>
+<li><strong>Add New Book:</strong> You can easily add new books to your collection using the "Add New Book" feature. To add a book, simply provide the following details:
+  <ul>
+    <li><strong>Title:</strong> Enter the title of the book.</li>
+    <li><strong>Author:</strong> Enter the name of the author.</li>
+    <li><strong>Pages:</strong> Specify the total number of pages in the book.</li>
+    <li><strong>Read Status:</strong> Use the checkbox to mark the book as read or unread.</li>
+  </ul>
+  Once you've entered the details, click the "Add Book" button, and the new book will be added to your collection.
+</li>
+<li><strong>Mark Books as Read/Unread:</strong> The app allows you to update the read status of your books. If you've finished reading a book, simply check the corresponding checkbox in the table to mark it as "Read." To indicate that you haven't read a book yet, uncheck the checkbox.</li>
+<li><strong>Remove A Book:</strong> You can remove a specific book of your choice, by clicking on the "X" button, which appears after you add a new book in the table.</li>
+<li><strong>Remove All Books:</strong> If you want to start fresh or simply clear your entire book list, you can use the "Remove All Books" button. This action will remove all books from the table, giving you a clean slate.</li>
+</ul>
 
 ## Getting Started
 
