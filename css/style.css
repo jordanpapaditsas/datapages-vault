@@ -119,6 +119,7 @@ main {
 
 td {
   text-align: center;
+  border: 1px solid var(--theme-color);
 }
 
 footer {
