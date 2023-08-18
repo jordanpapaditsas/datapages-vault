@@ -1,23 +1,20 @@
-const myLibrary = [
-  {
-    title: 'Lord of the rings',
-    author: 'Tolkien',
-    pages: 290,
-    read: 'Not read',
-  }
-];
+const myLibrary = [];
 const titleInput = document.querySelector('#book-title');
 const authorInput = document.querySelector('#author-name');
 const pagesInput = document.querySelector('#pages-number');
 const readInput = document.querySelector('#read-check');
 const addNewBookBtn = document.querySelector('#add-book');
+const removeAllBooksBtn = document.querySelector('#remove-all');
 const bookContainer = document.querySelector('#book-information');
+const table = document.querySelector('#lib-table');
+const tableBody = document.querySelector('#book-body');
 
 // Event Listeners
 addNewBookBtn.addEventListener('click', addBookToLibrary);
+removeAllBooksBtn.addEventListener('click', removeAllBooks);
 
 /**
- *  Object Constructor, for making new book instances. 
+ *  Constructor function that provides book instances.
  * 
  * @param {*} title 
  *              The title of the book.
@@ -41,22 +38,68 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
+  table.append(tableBody);
   title = titleInput.value;
   author = authorInput.value;
   pages = pagesInput.value;
   read = readInput.checked;
 
+  if (title === '' || author === '' || pages === '') {
+    return false;
+  }
+
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
+  displayLibrary();
 
-  displayBook();
+  titleInput.value = '';
+  authorInput.value = '';
+  pagesInput.value = '';
+  readInput.checked = false;
 }
 
-function displayBook() {
-  myLibrary.forEach((book) => {
-    console.log(book);
+function removeAllBooks() {
+  tableBody.textContent = '';
+  myLibrary.length = 0;
+
+  titleInput.value = '';
+  authorInput.value = '';
+  pagesInput.value = '';
+  readInput.checked = false;
+}
+
+function displayLibrary() {
+  tableBody.textContent = '';
+
+  myLibrary.forEach(book => {
+    const newRow = document.createElement('tr');
+    newRow.classList.add('body-row');
+
+    const titleCell = document.createElement('td');
+    titleCell.classList.add('body-cell');
+    titleCell.textContent = book.title;
+
+    const authorCell = document.createElement('td');
+    authorCell.classList.add('body-cell');
+    authorCell.textContent = book.author;
+
+    const pagesCell = document.createElement('td');
+    pagesCell.classList.add('body-cell');
+    pagesCell.textContent = book.pages;
+
+    const readCell = document.createElement('td');
+    readCell.classList.add('body-cell');
+    readCell.textContent = book.read ? 'read' : 'not read';
+
+    newRow.append(titleCell);
+    newRow.append(authorCell);
+    newRow.append(pagesCell);
+    newRow.append(readCell);
+
+    tableBody.append(newRow);
   });
 }
+
 
 
 

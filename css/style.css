@@ -22,7 +22,7 @@
 }
 
 i {
-  color: black;
+  color: rgb(196, 190, 190);
 }
 
 body {
@@ -37,6 +37,7 @@ body {
   "footer footer footer";
 }
 
+/* Main UI */
 .app-name {
   font-weight: var(--font-weight-medium);
   font-size: var(--font-size-large);
@@ -52,7 +53,7 @@ header {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  background-color: var(--header-color);
+  background-color: var(--theme-color);
   color: var(--text-color);
   padding: 1.4rem;
   font-size: 1.2rem
@@ -99,6 +100,27 @@ main {
   grid-row: 2 / 3;
 }
 
+#book-information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lib-table {
+  border: 1px solid var(--header-color);
+  border-radius: 0.3rem;
+  border-collapse: collapse;
+  font-size: var(--font-size-medium);
+  color: black;
+  background-color: var(--header-color);
+  flex: 1;
+  color: var(--theme-color);
+}
+
+td {
+  text-align: center;
+}
+
 footer {
   grid-area: footer;
   grid-row: 3;
@@ -114,19 +136,22 @@ input {
   border-radius: 0.5rem;
   padding: 0.5rem;
   background-color: var(--header-color);
-  accent-color: black;
+  accent-color: green;
+  font-size: 1rem;
+  color: var(--theme-color);
 }
 
-#add-book {
+#add-book, #remove-all {
   padding: 1rem;
   cursor: pointer;
-  color: var(--text-color);
+  color: var(--theme-color);
   font-weight: 900;
 }
 
 /* Hover Effects */
-#add-book:hover {
-  background-color: black;
+#add-book:hover, #remove-all:hover {
+  background-color: var(--theme-color);
+  color: var(--header-color);
 }
 
 ul a:hover {

@@ -45,18 +45,23 @@
         <div class="add-btn"> 
           <input id="add-book" type="button" value="ADD A NEW BOOK">
         </div>
+        <div class="remove-btn"> 
+          <input id="remove-all" type="button" value="REMOVE ALL BOOKS">
+        </div>
       </form>
     </aside>
 
     <main>
       <div id="book-information">
         <table id="lib-table">
-          <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Pages</th>
-            <th>Read</th>
-          </tr>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Pages</th>
+              <th>Read</th>
+            </tr>
+          </thead>
           <tbody id="book-body"></tbody>
         </table>
       </div>
