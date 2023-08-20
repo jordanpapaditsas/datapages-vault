@@ -32,7 +32,7 @@ function Book(title, author, pages, read) {
   this.read = read;
 
   this.getInfo = function() {
-    const readStatus = this.read ? '✅' : '❎';
+    const readStatus = this.read ? 'Read' : 'Not read';
     return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`;
   };
 }
@@ -91,8 +91,6 @@ function displayLibrary() {
     } else if (!book.read) {
       statusCell.textContent = 'Not read ';
       readBtn.style.backgroundColor = 'red';
-      readBtn.style.color = 'white';
-      readBtn.innerHTML = 'X';
     }
 
     readBtn.addEventListener('click', () => toggleReadStatus(index));
@@ -104,7 +102,6 @@ function displayLibrary() {
     newRow.append(pagesCell);
     newRow.append(statusCell);
     
-
     tableBody.append(newRow);
   });
 }
