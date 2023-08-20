@@ -26,7 +26,7 @@ WebMinds Hub is a web library application that allows you to keep track of your 
   Once you've entered the details, click the "Add Book" button, and the new book will be added to your collection.
 </li>
 <li><strong>Mark Books as Read/Unread:</strong> The app allows you to update the read status of your books. If you've finished reading a book, simply check the corresponding checkbox in the table to mark it as "Read." To indicate that you haven't read a book yet, uncheck the checkbox.</li>
-<li><strong>Remove A Book:</strong> You can remove a specific book of your choice, by clicking on the "X" button, which appears after you add a new book in the table.</li>
+<li><strong>Remove A Book:</strong> You can remove a specific book of your choice, by clicking on the 'X' button, which appears after you add a new book in the table.</li>
 <li><strong>Remove All Books:</strong> If you want to start fresh or simply clear your entire book list, you can use the "Remove All Books" button. This action will remove all books from the table, giving you a clean slate.</li>
 </ul>
 
@@ -41,7 +41,7 @@ Follow these steps to get the library application up and running on your local m
 
 ## Contributing
 
-All contributions are welcomed! If you'd like to contribute, please follow these steps:
+All contributions are accepted! If you'd like to contribute, please follow these steps:
 
 1. Fork this repository to your GitHub account.
 2. Create a new branch for your feature or bug fix: `git checkout -b feature/your-feature-name`
