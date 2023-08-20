@@ -32,7 +32,7 @@ function Book(title, author, pages, read) {
   this.read = read;
 
   this.getInfo = function() {
-    const readStatus = this.read ? 'read' : 'not read';
+    const readStatus = this.read ? '✅' : '❎';
     return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`;
   };
 }
@@ -58,20 +58,10 @@ function addBookToLibrary() {
   readInput.checked = false;
 }
 
-function removeAllBooks() {
-  tableBody.textContent = '';
-  myLibrary.length = 0;
-
-  titleInput.value = '';
-  authorInput.value = '';
-  pagesInput.value = '';
-  readInput.checked = false;
-}
-
 function displayLibrary() {
   tableBody.textContent = '';
 
-  myLibrary.forEach(book => {
+  myLibrary.forEach((book, index) => {
     const newRow = document.createElement('tr');
     newRow.classList.add('body-row');
 
@@ -87,17 +77,52 @@ function displayLibrary() {
     pagesCell.classList.add('body-cell');
     pagesCell.textContent = book.pages;
 
-    const readCell = document.createElement('td');
-    readCell.classList.add('body-cell');
-    readCell.textContent = book.read ? 'read' : 'not read';
+    const statusCell = document.createElement('td');
+    statusCell.classList.add('status-cell');
+    const readBtn = document.createElement('button');
+     readBtn.classList.toggle('read-status-btn');
+     readBtn.style.cssText = 'width: 1.8rem; height: 1.8rem; font-size: 1rem;';
+    
+    if (book.read) {
+     statusCell.textContent = 'Read ';
+     readBtn.style.backgroundColor = 'green';
+     readBtn.style.color = 'white';
+     readBtn.innerHTML = '✓';
+    } else if (!book.read) {
+      statusCell.textContent = 'Not read ';
+      readBtn.style.backgroundColor = 'red';
+      readBtn.style.color = 'white';
+      readBtn.innerHTML = 'X';
+    }
+
+    readBtn.addEventListener('click', () => toggleReadStatus(index));
+
+    statusCell.append(readBtn);
 
     newRow.append(titleCell);
     newRow.append(authorCell);
     newRow.append(pagesCell);
-    newRow.append(readCell);
+    newRow.append(statusCell);
+    
 
     tableBody.append(newRow);
   });
+}
+
+// Utility Functions
+function removeAllBooks() {
+  tableBody.textContent = '';
+  myLibrary.length = 0;
+
+  titleInput.value = '';
+  authorInput.value = '';
+  pagesInput.value = '';
+  readInput.checked = false;
+}
+
+function toggleReadStatus(index) {
+  myLibrary[index].read = !myLibrary[index].read;
+  displayLibrary();
 }
 
 

@@ -122,6 +122,13 @@ td {
   border: 1px solid var(--theme-color);
 }
 
+.status-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
 footer {
   grid-area: footer;
   grid-row: 3;
