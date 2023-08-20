@@ -115,18 +115,16 @@ main {
   background-color: var(--header-color);
   flex: 1;
   color: var(--theme-color);
+  flex-wrap: wrap;
 }
 
 td {
-  text-align: center;
   border: 1px solid var(--theme-color);
+  text-align: center;
 }
 
-.status-cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+.remove-book-btn, .read-status-btn {
+  vertical-align: middle;
 }
 
 footer {

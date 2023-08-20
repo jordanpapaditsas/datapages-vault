@@ -44,10 +44,10 @@ function addBookToLibrary() {
   pages = pagesInput.value;
   read = readInput.checked;
 
-  if (title === '' || author === '' || pages === '') {
-    return false;
+  if (!validateFormBooks()) {
+    return;
   }
-
+  
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
   displayLibrary();
@@ -60,7 +60,6 @@ function addBookToLibrary() {
 
 function displayLibrary() {
   tableBody.textContent = '';
-
   myLibrary.forEach((book, index) => {
     const newRow = document.createElement('tr');
     newRow.classList.add('body-row');
@@ -78,11 +77,11 @@ function displayLibrary() {
     pagesCell.textContent = book.pages;
 
     const statusCell = document.createElement('td');
-    statusCell.classList.add('status-cell');
+    statusCell.classList.add('body-cell');
     const readBtn = document.createElement('button');
-     readBtn.classList.toggle('read-status-btn');
-     readBtn.style.cssText = 'width: 1.8rem; height: 1.8rem; font-size: 1rem;';
-    
+    readBtn.classList.toggle('read-status-btn');
+    readBtn.style.cssText = 'width: 1.8rem; height: 1.8rem; font-size: 1rem;';
+
     if (book.read) {
      statusCell.textContent = 'Read ';
      readBtn.style.backgroundColor = 'green';
@@ -93,20 +92,42 @@ function displayLibrary() {
       readBtn.style.backgroundColor = 'red';
     }
 
+    const removeCell = document.createElement('td');
+    removeCell.classList.add('body-cell');
+    const removeBookBtn = document.createElement('button');
+    removeBookBtn.classList.toggle('remove-book-btn');
+    removeBookBtn.style.cssText = 'width: 1.8rem; height: 1.8rem; font-size: 1rem; background-color: red; color: white;';
+    removeBookBtn.innerHTML = '🞬';
+
     readBtn.addEventListener('click', () => toggleReadStatus(index));
+    removeBookBtn.addEventListener('click', () => removeBook(index));
 
     statusCell.append(readBtn);
+    removeCell.append(removeBookBtn);
 
     newRow.append(titleCell);
     newRow.append(authorCell);
     newRow.append(pagesCell);
     newRow.append(statusCell);
-    
+    newRow.append(removeCell);
     tableBody.append(newRow);
   });
 }
 
 // Utility Functions
+function validateFormBooks() {
+  const title = titleInput.value;
+  const author = authorInput.value;
+  const pages = parseInt(pagesInput.value);
+  const read = readInput.checked;
+
+  if (title === '' || author === '' || isNaN(pages) || pages <= 0) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
 function removeAllBooks() {
   tableBody.textContent = '';
   myLibrary.length = 0;
@@ -122,6 +143,12 @@ function toggleReadStatus(index) {
   displayLibrary();
 }
 
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  displayLibrary();
+}
 
+
+// Need to create span element for error validation in HTML and fix the logic in JS
 
 
