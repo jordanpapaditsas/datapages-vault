@@ -8,7 +8,7 @@ WebMinds Hub is a web library application that allows you to keep track of your 
 
 ## Planning
 <ul>
-  <li>Add a Database for creating, reading, update and deleting users and books</li>
+  <li>Add a Database for create, read, update and delete users and books</li>
   <li>Add a local storage for storing and retrieving JSON files and parsing it into JavaScript Objects</li>
 </ul>
 
