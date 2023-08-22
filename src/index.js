@@ -61,14 +61,7 @@ function addBookToLibrary() {
   let newBook = new Book(title, author, pages, read);
   myLibrary.push(newBook);
   displayLibrary();
-
-  titleInput.value = '';
-  authorInput.value = '';
-  pagesInput.value = '';
-  titleErrorMessage.textContent = '';
-  authorErrorMessage.textContent = '';
-  pagesErrorMessage.textContent = '';
-  readInput.checked = false;
+  resetAllInputs();
 }
 
 function displayLibrary() {
@@ -125,6 +118,16 @@ function displayLibrary() {
 }
 
 // Utility Functions
+function resetAllInputs() {
+  titleInput.value = '';
+  authorInput.value = '';
+  pagesInput.value = '';
+  readInput.checked = false;
+  titleErrorMessage.textContent = '';
+  authorErrorMessage.textContent = '';
+  pagesErrorMessage.textContent = '';
+}
+
 function validateFormBooks() {
   const title = titleInput.value;
   const author = authorInput.value;
@@ -151,11 +154,7 @@ function validateFormBooks() {
 function removeAllBooks() {
   tableBody.textContent = '';
   myLibrary.length = 0;
-
-  titleInput.value = '';
-  authorInput.value = '';
-  pagesInput.value = '';
-  readInput.checked = false;
+  resetAllInputs();
 }
 
 function toggleReadStatus(index) {
