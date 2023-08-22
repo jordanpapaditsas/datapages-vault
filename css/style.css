@@ -56,7 +56,7 @@ header {
   background-color: var(--theme-color);
   color: var(--text-color);
   padding: 1.4rem;
-  font-size: 1.2rem
+  font-size: 1.2rem;
 }
 
 .navbar li,
@@ -64,6 +64,21 @@ header {
   list-style: none;
   text-decoration: none;
   color: var(--text-color);
+}
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--text-color);
 }
 
 aside {
@@ -91,7 +106,22 @@ form {
   display: grid;
   grid-template-columns: 1fr;
   gap: 4rem;
-  
+}
+
+.title-input, .author-input, .pages-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.8);
+  margin-right: 0.5rem;
+}
+
+.error-message {
+  color: red;
 }
 
 main {
@@ -110,12 +140,14 @@ main {
   border: 1px solid var(--header-color);
   border-radius: 0.3rem;
   border-collapse: collapse;
+  table-layout: fixed;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
   font-size: var(--font-size-medium);
   color: black;
   background-color: var(--header-color);
-  flex: 1;
   color: var(--theme-color);
-  flex-wrap: wrap;
 }
 
 td {
@@ -145,6 +177,9 @@ input {
   accent-color: green;
   font-size: 1rem;
   color: var(--theme-color);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
 }
 
 #add-book, #remove-all {
@@ -152,6 +187,20 @@ input {
   cursor: pointer;
   color: var(--theme-color);
   font-weight: 900;
+}
+
+.read-status-btn {
+  width: 1.8rem;
+  height: 1.8rem;
+  font-size: 1rem;
+}
+
+.remove-book-btn {
+  width: 1.8rem;
+  height: 1.8rem;
+  font-size: 1rem;
+  background-color: red;
+  color: white;
 }
 
 /* Hover Effects */
@@ -162,6 +211,7 @@ input {
 
 ul a:hover {
   color: black;
+  text-decoration: underline;
 }
 
 img:hover {
@@ -176,4 +226,166 @@ img:hover {
 #github i:hover {
   transform: scale(1.5);
   transition: 0.2s ease-in-out;
+}
+
+/* Media Queries */
+@media (max-width: 1300px) {
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar {
+    font-size: 1.1rem;
+  }
+
+  .wbm-logo {
+    width: 3rem;
+  }
+
+  .app-name {
+    font-size: 1.2rem;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.7rem;
+    padding: 1rem;
+  }
+
+  .read-checkbox {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  input[type="checkbox"] {
+    transform: scale(1.5);
+  }
+
+  label, span, input {
+    font-size: 0.8rem;
+  }
+
+  input[type="button"] {
+    font-size: 0.6rem;
+  }
+
+  #lib-table {
+    font-size: 1.1rem;
+  }
+
+  td {
+    overflow: hidden;
+    text-overflow: ellipsis; 
+  }
+}
+
+@media (max-width: 660px) {
+  .navbar {
+    position: fixed;
+    left: -100%;
+    flex-direction: column;
+    background-color: var(--theme-color);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    gap: 1rem;
+  }
+
+  .navbar.active {
+    left: 0;
+  }
+  
+  header {
+    background-color: #4f3532;
+  }
+
+  .hamburger {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .wbm-logo {
+    width: 2rem;
+  }
+
+  .app-name {
+    font-size: 1.1rem;
+  }
+
+  form {
+    gap: 1.7rem;
+    padding: 0.4rem;
+  }
+
+  label, span, input {
+    font-size: 0.6rem;
+  }
+
+  input[type="button"] {
+    font-size: 0.5rem;
+  }
+
+  #lib-table {
+    font-size: 0.8rem;
+  }
+
+  td {
+    font-size: 0.7rem;
+  }
+
+  .read-status-btn {
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.5rem;
+  }
+
+  .remove-book-btn {
+    width: 1rem;
+    height: 1rem;
+    font-size: 0.5rem;
+  }
+
+  footer {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 385px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+
+  #add-book, #remove-all {
+    padding: 0.4rem;
+    width: 5rem;
+  }
+
+  aside {
+    gap: 0.8rem;
+  }
 }

@@ -1,4 +1,5 @@
 const myLibrary = [];
+
 const titleInput = document.querySelector('#book-title');
 const authorInput = document.querySelector('#author-name');
 const pagesInput = document.querySelector('#pages-number');
@@ -8,10 +9,19 @@ const removeAllBooksBtn = document.querySelector('#remove-all');
 const bookContainer = document.querySelector('#book-information');
 const table = document.querySelector('#lib-table');
 const tableBody = document.querySelector('#book-body');
+const hamburgerMenu = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.navbar');
+const titleErrorMessage = document.querySelector('.title-input .error-message');
+const authorErrorMessage = document.querySelector('.author-input .error-message');
+const pagesErrorMessage = document.querySelector('.pages-input .error-message');
 
 // Event Listeners
 addNewBookBtn.addEventListener('click', addBookToLibrary);
 removeAllBooksBtn.addEventListener('click', removeAllBooks);
+hamburgerMenu.addEventListener('click', () => {
+  hamburgerMenu.classList.toggle('active');
+  navMenu.classList.toggle('active');
+})
 
 /**
  *  Constructor function that provides book instances.
@@ -55,6 +65,9 @@ function addBookToLibrary() {
   titleInput.value = '';
   authorInput.value = '';
   pagesInput.value = '';
+  titleErrorMessage.textContent = '';
+  authorErrorMessage.textContent = '';
+  pagesErrorMessage.textContent = '';
   readInput.checked = false;
 }
 
@@ -79,8 +92,7 @@ function displayLibrary() {
     const statusCell = document.createElement('td');
     statusCell.classList.add('body-cell');
     const readBtn = document.createElement('button');
-    readBtn.classList.toggle('read-status-btn');
-    readBtn.style.cssText = 'width: 1.8rem; height: 1.8rem; font-size: 1rem;';
+    readBtn.classList.add('read-status-btn');
 
     if (book.read) {
      statusCell.textContent = 'Read ';
@@ -95,8 +107,7 @@ function displayLibrary() {
     const removeCell = document.createElement('td');
     removeCell.classList.add('body-cell');
     const removeBookBtn = document.createElement('button');
-    removeBookBtn.classList.toggle('remove-book-btn');
-    removeBookBtn.style.cssText = 'width: 1.8rem; height: 1.8rem; font-size: 1rem; background-color: red; color: white;';
+    removeBookBtn.classList.add('remove-book-btn');
     removeBookBtn.innerHTML = '🞬';
 
     readBtn.addEventListener('click', () => toggleReadStatus(index));
@@ -104,7 +115,6 @@ function displayLibrary() {
 
     statusCell.append(readBtn);
     removeCell.append(removeBookBtn);
-
     newRow.append(titleCell);
     newRow.append(authorCell);
     newRow.append(pagesCell);
@@ -119,13 +129,23 @@ function validateFormBooks() {
   const title = titleInput.value;
   const author = authorInput.value;
   const pages = parseInt(pagesInput.value);
-  const read = readInput.checked;
+  let isValid = true;
 
-  if (title === '' || author === '' || isNaN(pages) || pages <= 0) {
-    return false;
-  } else {
-    return true;
+  if (!title) {
+    showError(titleErrorMessage, 'Please give a valid title of the book *');
+    isValid = false;
+  }   
+
+  if (!author) {
+    showError(authorErrorMessage, 'Please give a valid author *');
+    isValid = false;
   }
+
+  if (!pages || isNaN(pages) || pages <= 0) {
+    showError(pagesErrorMessage, 'Please give a valid number of pages *');
+    isValid = false;
+  }
+  return isValid;
 }
 
 function removeAllBooks() {
@@ -148,7 +168,10 @@ function removeBook(index) {
   displayLibrary();
 }
 
+function showError(errorElement, message) {
+  errorElement.textContent = message;
+}
 
-// Need to create span element for error validation in HTML and fix the logic in JS
+
 
 

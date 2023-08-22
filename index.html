@@ -16,6 +16,11 @@
           <li><a href="#"><i class="fa-solid fa-phone"></i> Contact us</a></li>
           <li><a href="#"><i class="fa-solid fa-user"></i> Log in</a></li>
         </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </nav>
     </header>
 
@@ -24,26 +29,28 @@
         <img class="wbm-logo" src="assets/webminds-hub.png" alt="WBMH">
         <p class="app-name">WebMinds Hub</p>
       </div>
-
       <form>
         <div class="title-input">
-          <label for="title-book">Please input the title of the book: </label>
+          <label for="book-title">Please input the title of the book: </label>
           <input type="text" name="book-title" id="book-title" autocomplete="off" required>
+          <span class="error-message"></span>
         </div>
         <div class="author-input">
           <label for="author-name">Please input the name of the author: </label>
           <input type="text" name="author-name" id="author-name" autocomplete="off" required>
+          <span class="error-message"></span>
         </div>
         <div class="pages-input">
           <label for="pages-number">Please input the total pages of the book:</label>
-          <input type="text" name="pages-number" id="pages-number" minlength="1" autocomplete="off" pattern="[0-9]*" required>
+          <input type="text" name="pages-number" id="pages-number" minlength="1" autocomplete="off" required>
+          <span class="error-message"></span>
         </div>
         <div class="read-checkbox">
           <input type="checkbox" name="read-status" id="read-check">
-          <label for="read-status">Have you read already this book?</label>
+          <label for="read-check">Have you read already this book?</label>
         </div>
         <div class="add-btn"> 
-          <input id="add-book" type="button" value="ADD A NEW BOOK">
+          <input id="add-book" class="hi" type="button" value="ADD A NEW BOOK">
         </div>
         <div class="remove-btn"> 
           <input id="remove-all" type="button" value="REMOVE ALL BOOKS">
