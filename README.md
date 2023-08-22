@@ -6,6 +6,12 @@ WebMinds Hub is a web library application that allows you to keep track of your 
 ## Live Preview
 **https://jordanpapaditsas.github.io/webminds-hub/**
 
+## Planning
+<ul>
+  <li>Add a Database for creating, reading, update and deleting users and books</li>
+  <li>Add a local storage for storing and retrieving JSON files and parsing it into JavaScript Objects</li>
+</ul>
+
 ## Features
 <ul>
 <li><strong>Dynamic Book List Table:</strong> Each row represents a book and includes the following information:
