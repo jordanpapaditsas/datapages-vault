@@ -135,17 +135,17 @@ function validateFormBooks() {
   let isValid = true;
 
   if (!title) {
-    showError(titleErrorMessage, 'Please give a valid title of the book *');
+    showError(titleErrorMessage, 'Please give a valid title of the book');
     isValid = false;
   }   
 
   if (!author) {
-    showError(authorErrorMessage, 'Please give a valid author *');
+    showError(authorErrorMessage, 'Please give a valid author');
     isValid = false;
   }
 
   if (!pages || isNaN(pages) || pages <= 0) {
-    showError(pagesErrorMessage, 'Please give a valid number of pages *');
+    showError(pagesErrorMessage, 'Please give a valid number of pages');
     isValid = false;
   }
   return isValid;

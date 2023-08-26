@@ -16,6 +16,10 @@
   box-sizing: border-box;
 }
 
+.abbrv {
+  color: red;
+}
+
 .wbm-logo {
   width: 4rem;
   transition: 1.1s all ease-in-out;
