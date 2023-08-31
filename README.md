@@ -1,17 +1,11 @@
 # WebMinds-Hub
 
 ## Description
-WebMinds Hub is a web library application that allows you to keep track of your reading list, categorizing books you want to read and marking them as read or unread. The app is built using HTML, CSS, and JavaScript, providing a dynamic table for displaying your book collection. ( Still under Development )
+WebMinds Hub is a web library application that allows you to keep track of your reading list, categorizing books you want to read and marking them as read or unread. The app is built using HTML, CSS, and JavaScript, providing a dynamic table for displaying your book collection.
 
 ## Live Preview
 **https://jordanpapaditsas.github.io/webminds-hub/**  
 **https://webminds-hub.vercel.app/**
-
-## Planning
-<ul>
-  <li>Add a Database for create, read, update and delete users and books</li>
-  <li>Add a local storage for store and retrieve JSON files, and parse it into JavaScript Objects</li>
-</ul>
 
 ## Features
 <ul>
