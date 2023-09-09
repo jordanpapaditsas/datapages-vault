@@ -24,7 +24,7 @@ hamburgerMenu.addEventListener('click', () => {
 })
 
 /**
- *  Constructor function that provides book instances.
+ *  Class function that provides book instances.
  * 
  * @param {*} title 
  *              The title of the book.
@@ -35,16 +35,17 @@ hamburgerMenu.addEventListener('click', () => {
  * @param {*} read 
  *              The status of the book.
  */
-function Book(title, author, pages, read) {
+class Book {
+  constructor(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read;
-
-  this.getInfo = function() {
-    const readStatus = this.read ? 'Read' : 'Not read';
+  this.read = read === 'read';
+}
+  getInfo = () => {
+    const readStatus = this.read ? 'read' : 'not read';
     return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`;
-  };
+  }
 }
 
 function addBookToLibrary() {
@@ -171,6 +172,7 @@ function showError(errorElement, message) {
   errorElement.textContent = message;
 }
 
-
-
-
+// Default book instance example
+const book = new Book('Chaos', 'James Gleick', 368, 'not read');
+myLibrary.push(book);
+displayLibrary();
