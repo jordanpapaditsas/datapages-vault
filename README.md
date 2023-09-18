@@ -5,7 +5,6 @@ WebMinds Hub is a web library application that allows you to keep track of your 
 
 ## Live Preview
 **https://jordanpapaditsas.github.io/webminds-hub/**  
-**https://webminds-hub.vercel.app/**
 
 ## Features
 <ul>
