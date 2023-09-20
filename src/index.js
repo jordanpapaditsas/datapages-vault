@@ -40,7 +40,8 @@ class Book {
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.read = read === 'read';
+  this.read = read;
+
 }
   getInfo() {
     const readStatus = this.read ? 'read' : 'not read';
@@ -49,10 +50,10 @@ class Book {
 }
 
 // Testing if the method getInfo() from class Book, works properly as intended.
-const book1 = new Book('Chaos', 'James', 390, 'not read');
-const book2 = new Book('Chaos2', 'James2', 380, 'read');
-console.log(book1.getInfo());
-console.log(book2.getInfo());
+const testBook1 = new Book('Harry Potter and the Philosopher\'s Stone', 'J.K Rowling', 342, true);
+const testBook2 = new Book('Eloquent JavaScript', 'Marijin', 380, false);
+console.log(testBook1.getInfo());
+console.log(testBook2.getInfo());
 
 function addBookToLibrary() {
   table.append(tableBody);
@@ -179,6 +180,7 @@ function showError(errorElement, message) {
 }
 
 // Default book instance example
-const book = new Book('Chaos', 'James Gleick', 368, 'not read');
-myLibrary.push(book);
+const defaultBook1 = new Book('Chaos', 'James Gleick', 368, false);
+const defaultBook2 = new Book('The Fellowship of the Ring', 'J.R.R Tolkien', 423, true);
+myLibrary.push(defaultBook1, defaultBook2);
 displayLibrary();
