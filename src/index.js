@@ -42,11 +42,17 @@ class Book {
   this.pages = pages;
   this.read = read === 'read';
 }
-  getInfo = () => {
+  getInfo() {
     const readStatus = this.read ? 'read' : 'not read';
     return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`;
   }
 }
+
+// Testing if the method getInfo() from class Book, works properly as intended.
+const book1 = new Book('Chaos', 'James', 390, 'not read');
+const book2 = new Book('Chaos2', 'James2', 380, 'read');
+console.log(book1.getInfo());
+console.log(book2.getInfo());
 
 function addBookToLibrary() {
   table.append(tableBody);
