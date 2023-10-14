@@ -1,10 +1,10 @@
-# WebMinds-Hub
+# DataPages Vault
 
 ## Description
-WebMinds Hub is a web library application that allows you to keep track of your reading list, categorizing books you want to read and marking them as read or unread. The app is built using HTML, CSS, and JavaScript, providing a dynamic table for displaying your book collection.
+DataPages Vault is a web library application that allows you to keep track of your reading list, categorizing books you want to read and marking them as read or unread. The app is built using HTML, CSS, and JavaScript, providing a dynamic table for displaying your book collection.
 
 ## Live Preview
-**https://jordanpapaditsas.github.io/webminds-hub/**  
+**https://jordanpapaditsas.github.io/datapages-vault/**  
 
 ## Features
 <ul>
@@ -34,7 +34,7 @@ WebMinds Hub is a web library application that allows you to keep track of your 
 
 Follow these steps to get the library application up and running on your local machine:
 
-1. Clone this repository: `git clone https://github.com/your-username/webminds-hub.git`
+1. Clone this repository: `git clone https://github.com/your-username/datapages-vault.git`
 2. Open the `index.html` file in your preferred web browser.
 3. Explore the mechanism of the application.
 4. Customize the content to fit your application's needs.
